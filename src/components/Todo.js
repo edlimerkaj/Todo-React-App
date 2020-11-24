@@ -1,26 +1,26 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { deleteTodo, editTodo } from "../store/actions";
+import React, { useState } from "react"
+import { useDispatch } from "react-redux"
+import { deleteTodo, editTodo } from "../store/actions"
 
 export default function Todo({ todo }) {
-  const dispatch = useDispatch();
-  const [editClicked, setEditClicked] = useState(false);
-  const [newText, setNewText] = useState(todo.text);
+  const dispatch = useDispatch()
+  const [editClicked, setEditClicked] = useState(false)
+  const [newText, setNewText] = useState(todo.text)
 
   const checkTodo = () => {
-    document.querySelector(`#todo-${todo.id}`).classList.toggle("check");
-  };
+    document.querySelector(`#todo-${todo.id}`).classList.toggle("check")
+  }
 
-  const onKeyPressHandler = event => {
+  const onKeyPressHandler = (event) => {
     if (event.key === "Enter" && newText.length !== 0) {
-      dispatch(editTodo(todo.id, newText));
-      toggleInput();
+      dispatch(editTodo(todo.id, newText))
+      toggleInput()
     }
-  };
+  }
 
   const toggleInput = () => {
-    setEditClicked(e => !e);
-  };
+    setEditClicked((e) => !e)
+  }
 
   return (
     <div className="todo">
@@ -29,7 +29,7 @@ export default function Todo({ todo }) {
           className="edit-input"
           type="text"
           value={newText}
-          onChange={e => setNewText(e.target.value)}
+          onChange={(e) => setNewText(e.target.value)}
           onKeyPress={onKeyPressHandler}
         />
       ) : (
@@ -50,5 +50,5 @@ export default function Todo({ todo }) {
         </span>
       </span>
     </div>
-  );
+  )
 }

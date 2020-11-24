@@ -1,25 +1,25 @@
-export const ADD_TODO = "addTodo";
-export const DEL_TODO = "deleteTodo";
-export const EDIT_TODO = "editTodo";
+export const ADD_TODO = "addTodo"
+export const DEL_TODO = "deleteTodo"
+export const EDIT_TODO = "editTodo"
 
-export const addTodo = data => {
+export const addTodo = (data) => {
   return {
     type: ADD_TODO,
-    data
-  };
-};
+    data,
+  }
+}
 
-export const deleteTodo = id => {
+export const deleteTodo = (id) => {
   return {
     type: DEL_TODO,
-    id
-  };
-};
+    id,
+  }
+}
 
 export const editTodo = (id, newText) => {
   return {
     type: EDIT_TODO,
     id,
-    newText
-  };
-};
+    newText,
+  }
+}

@@ -1,27 +1,27 @@
-import React, { useState } from "react";
-import { v4 } from "uuid";
-import { useDispatch } from "react-redux";
-import { addTodo } from "../store/actions";
+import React, { useState } from "react"
+import { v4 } from "uuid"
+import { useDispatch } from "react-redux"
+import { addTodo } from "../store/actions"
 
 export default function AddTodo() {
-  const [todoText, setTodoText] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-  const dispatch = useDispatch();
+  const [todoText, setTodoText] = useState("")
+  const [errorMessage, setErrorMessage] = useState("")
+  const dispatch = useDispatch()
 
   const handleSave = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     if (todoText === "") {
-      setErrorMessage("Todo cannot be empty!");
-      return;
+      setErrorMessage("Todo cannot be empty!")
+      return
     }
-    setErrorMessage("");
+    setErrorMessage("")
     const newTodo = {
       text: todoText,
       id: v4(),
-    };
-    dispatch(addTodo(newTodo));
-    setTodoText("");
-  };
+    }
+    dispatch(addTodo(newTodo))
+    setTodoText("")
+  }
 
   return (
     <div className="addTodo">
@@ -32,7 +32,7 @@ export default function AddTodo() {
       />
       <button onClick={handleSave}>+</button>
       <br />
-      {errorMessage ? <p class="error">{errorMessage}</p> : ""}
+      {errorMessage ? <p className="error">{errorMessage}</p> : ""}
     </div>
-  );
+  )
 }

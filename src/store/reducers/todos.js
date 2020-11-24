@@ -1,4 +1,4 @@
-import * as actions from "../actions";
+import * as actions from "../actions"
 
 export default (
   state = [
@@ -13,16 +13,16 @@ export default (
 ) => {
   switch (action.type) {
     case actions.ADD_TODO:
-      return [...state, action.data];
+      return [...state, action.data]
     case actions.DEL_TODO:
-      return state.filter((todo) => todo.id !== action.id);
+      return state.filter((todo) => todo.id !== action.id)
     case actions.EDIT_TODO:
       return state.map((todo) =>
         todo.id === action.id ? { text: action.newText, id: todo.id } : todo
-      );
+      )
     default:
-      return state;
+      return state
   }
-};
+}
 
 // Combine reducers in index.js
