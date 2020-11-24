@@ -16,6 +16,10 @@ export default (
       return [...state, action.data];
     case actions.DEL_TODO:
       return state.filter((todo) => todo.id !== action.id);
+    case actions.EDIT_TODO:
+      return state.map((todo) =>
+        todo.id === action.id ? { text: action.newText, id: todo.id } : todo
+      );
     default:
       return state;
   }

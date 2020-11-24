@@ -69,6 +69,7 @@ body {
       color: rgb(42, 35, 102);
       p {
         cursor: pointer;
+        overflow: auto;
       }
       &:nth-child(odd) {
         background-color: #a7bfe8;
@@ -113,4 +114,20 @@ body {
       margin-top: 5px;
     }
   }
+}
+
+.fa-edit {
+  margin-right: 10px;
+}
+
+.edit-input {
+  background-color: transparent;
+  border: none;
+  padding: 20px 0px;
+  color: #2a2366;
+  font-size: 2.3rem;
+  font-family: "Pathway Gothic One", sans-serif;
+  outline: none;
+  font-style: italic;
+  width: 80%;
 }
